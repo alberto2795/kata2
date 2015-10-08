@@ -4,8 +4,6 @@
  */
 package kata2;
 
-import java.util.Map;
-
 /**
  *
  * @author usuario

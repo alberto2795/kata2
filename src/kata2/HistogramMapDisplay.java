@@ -4,15 +4,11 @@
  */
 package kata2;
 
-import java.util.Map;
-import java.util.Map.Entry;
-
 /**
  *
  * @author usuario
  */
 public class HistogramMapDisplay {
-    Entry entry;
     public HistogramMapDisplay() {
     }
      public void display (Histogram histogram){
