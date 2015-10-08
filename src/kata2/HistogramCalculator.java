@@ -12,17 +12,17 @@ import java.util.HashMap;
  */
 public class HistogramCalculator <T>{
     private final T[] elVector;
+    private Histogram<T> histograma;
     
     public HistogramCalculator(T[] elVector) {
         this.elVector=elVector;
     }
     
-    public HashMap<T, Integer> calculate(){
-        HashMap<T, Integer> map = new HashMap();
+    public Histogram<T> calculate(){
+        histograma = new Histogram();
         for (int i = 0; i < elVector.length; i++) {
-            if(!map.containsKey(elVector[i])) map.put(elVector[i], 1);
-            else map.put(elVector[i], map.get(elVector[i])+1);
+            histograma.increment(elVector[i]);
         }
-        return map;
+        return histograma;
     }
 }

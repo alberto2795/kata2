@@ -15,11 +15,10 @@ public class HistogramMapDisplay {
     Entry entry;
     public HistogramMapDisplay() {
     }
-     public void display (Map map){
-         for (Object key : map.keySet()){
-             System.out.print(key+" aparece "+map.get(key));
-             if(map.get(key)==1) System.out.println(" vez.");
-             else System.out.println(" veces.");
+     public void display (Histogram histogram){
+         for (Object key : histogram.keySet()){
+             System.out.println(key+" aparece "+histogram.get(key) + 
+                     (histogram.get(key)==1?" vez.":" veces."));
          }
      }
 }

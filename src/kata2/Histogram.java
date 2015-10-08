@@ -4,19 +4,28 @@
  */
 package kata2;
 
-import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
  *
  * @author usuario
  */
-public class Histogram {
-    public static void main(String[] args) {
-        final Integer[] values = {1,2,7,4,4,9,-2,5,7,9};
-        final String[] nombres = {"Pepe", "Juan", "Jose", "Pepe", "Pepe", "Jose", "Alberto", "Pepe"};
-        HistogramCalculator<String> histogram = new HistogramCalculator(nombres);
-        Map map = histogram.calculate();
-        HistogramMapDisplay display = new HistogramMapDisplay();
-        display.display(map);
+public class Histogram<T> {
+    private HashMap<T, Integer> map = new HashMap();
+
+    public Histogram() {
+    }
+
+    public Integer get(Object key) {
+        return map.get(key);
+    }
+
+    public Set<T> keySet() {
+        return map.keySet();
+    }
+    
+    public void increment (T key){
+        map.put(key, map.containsKey(key)?map.get(key)+1 :1);
     }
 }
